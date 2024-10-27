@@ -1,0 +1,115 @@
+.listCard{
+    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 10px;
+    margin: 15px 0px;
+    
+    .listCardContainer{
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+
+        .listCardImage{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 250px;
+                height: auto;
+                max-height: 250px;
+            }
+        }
+        .listCardHotelDetails{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .listCardHotelName{
+                font-size: 30px;
+                color: #0168b2;
+                font-weight: 600;
+            }
+            .listCardHotelDistance{
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .listCardHotelAirport{
+                h3{
+                    border-radius: 7px;
+                    background-color: #00751d;
+                    display: inline;
+                    padding: 5px;
+                    font-size: 15px;
+                    color: white;
+                }
+            }
+            .listCardHotelDescription{
+                font-size: 17px;
+                font-weight: 600;
+            }
+            .listCardHotelFreeCancel{
+                color: #00751d;
+                font-weight: 600;
+            }
+            .listCardHotelFreeCancel{
+                color: #00751d;
+                font-size: 17px;
+            }
+        }
+
+        .listCardHotelPriceDetails{
+            margin-left: auto;
+            width: 200px;
+            position: relative;
+            .listCardHotelRating{
+                display: flex;
+                justify-content: flex-end;
+                .listCardHotelRatingIn{
+                    background-color: #063272;
+                    color: white;
+                    padding: 5px 8px;
+                }
+            }
+
+            .listCardHotelPriceIn{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                .listCardHotelPrice , .listCardHotelIncludes  , .listCardHotelAvailability{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                .listCardHotelPrice{
+                    font-size: 25px;
+                }
+                .listCardHotelIncludes{
+                    font-size: 15px;
+                }
+                .listCardHotelAvailability{
+                    width: 200px;
+                    .listCardHotelAvailabilityIn{
+                        background-color: #00751d;
+                        color: white;
+                        padding: 7px 20px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #025c19;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        }
+                    }
+
+                }
+            }
+
+        }
+        @media (max-width: 769px) {
+            flex-direction: row;
+        }
+    }
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}

@@ -1,0 +1,122 @@
+.list{
+    display: flex;
+    justify-content: center
+
+}
+
+.listContainer{
+    display: flex;
+    width: 100%;
+    padding : 10px;
+    padding-bottom: 20px;
+    max-width: 1500px;
+    gap: 20px;
+
+
+
+
+    .listHotel{
+        flex-grow: 1;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+
+.listSearchBarContainer{
+    display: flex;
+    padding: 20px;
+    background-color: #ffb029;
+    flex-direction: column;
+    max-width: 700px;
+    gap: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 10px;
+
+    .listSearchBarHeader{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .listSearchBarItems{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .listSearchBoxLeft{
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            
+
+            .listSearchBarInputHeader{
+                font-size: 17px;
+            }
+            .listSearchBarInput{
+                padding : 5px;
+                width: 175px;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            position: relative;
+            .listSearchBarDatePicker{
+                position: absolute;
+                top: 200px;
+                border: 2px solid lightgray;
+
+                .rdrDefinedRangesWrapper{
+                    display: none;
+                }
+            }
+
+        }
+
+        .listSearchBoxRight{
+            display: flex;
+            
+            flex-direction: column;
+            gap: 10px;
+
+            .listSearchBoxRightInput{
+                display: flex;
+                align-content: center;
+                .listSearchBarInput{
+                    padding : 5px;
+                    width: 175px;
+                    border-radius: 5px;
+                    outline: none;
+                }
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: row;
+        }
+
+
+
+    }
+
+    .listSearchBarButton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: white;
+        margin-top: 10px;
+        color: #006ce4;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 7px;
+
+        &:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;        
+        }
+    }
+
+}
