@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 
 import authroute from './routes/auth.js';
-import hotelsroute from '.x /routes/hotels.js';
+import hotelsroute from './routes/hotels.js';
 import roomsroute from './routes/rooms.js';
 import usersroute from './routes/users.js';
 
