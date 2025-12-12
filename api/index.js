@@ -25,7 +25,7 @@ const connectdb = async () => {
 
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: '*',
     credentials: true
   }));
 app.use(express.json({ limit: '10mb' }));
