@@ -23,11 +23,13 @@ function Login(props) {
 
   const [adminLogin, setAdminLogin] = useState(false)
 
+  const baseUrl = "https://quickstay-f66g.onrender.com/";
+
 
   const handleLoginButton = async () => {
     dispatch(loginStart())
     try {
-      const user = await axios.post(`/auth/login`,{
+      const user = await axios.post(`{$baseUrl}/auth/login`,{
         username: userId,
         password: password
       })
@@ -47,7 +49,7 @@ function Login(props) {
         notification('Error',`Password does NOT match.`,'danger')
       }
       else{
-        const isRegistered = await axios.post(`/auth/register`,{
+        const isRegistered = await axios.post(`{$baseUrl}/auth/register`,{
           username: userId,
           email: emailId,
           isAdmin: false,
