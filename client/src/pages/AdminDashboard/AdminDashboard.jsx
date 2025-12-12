@@ -14,6 +14,7 @@ import Select from 'react-select'
 
 export default function AdminDashboard() {
   
+    const baseUrl = `https://quickstay-f66g.onrender.com`;
     const user = useSelector(state => state.auth.user)
     const [isAdmin, setIsAdmin] = useState(false)
     const [selectedHotelImage, setSelectedHotelImage] = useState([]);
@@ -23,7 +24,7 @@ export default function AdminDashboard() {
     useEffect(()=>{
         const fetchAdminStatus = async () => {
             try {
-                const res = await axios.get(`/auth/isAdmin`);
+                const res = await axios.get(`${baseUrl}/auth/isAdmin`);
                 if (res.status === 200) {
                     setIsAdmin(true);
                 }
@@ -185,7 +186,7 @@ export default function AdminDashboard() {
         if (['createhotel'].includes(operation)){
 
             try {
-                const response = await axios.post('/hotels', formDataHotel);
+                const response = await axios.post(`${baseUrl}/hotels`, formDataHotel);
                 console.log('Hotel created:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Creation Success','success')
@@ -318,7 +319,7 @@ export default function AdminDashboard() {
         if (['createadmin'].includes(operation)){
 
             try {
-                const response = await axios.post(`/auth/register/admin`, formDataAdmin);
+                const response = await axios.post(`${baseUrl}/auth/register/admin`, formDataAdmin);
                 console.log('Admin created:', response.data);
                 if (response.status == '200'){
                     notification('Admin','Admin created Success','success')

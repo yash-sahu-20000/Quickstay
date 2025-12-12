@@ -29,7 +29,7 @@ function Login(props) {
   const handleLoginButton = async () => {
     dispatch(loginStart())
     try {
-      const user = await axios.post(`{$baseUrl}/auth/login`,{
+      const user = await axios.post(`${baseUrl}/auth/login`,{
         username: userId,
         password: password
       })
@@ -49,7 +49,7 @@ function Login(props) {
         notification('Error',`Password does NOT match.`,'danger')
       }
       else{
-        const isRegistered = await axios.post(`{$baseUrl}/auth/register`,{
+        const isRegistered = await axios.post(`${baseUrl}/auth/register`,{
           username: userId,
           email: emailId,
           isAdmin: false,
