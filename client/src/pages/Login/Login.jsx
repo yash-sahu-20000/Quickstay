@@ -23,7 +23,7 @@ function Login(props) {
 
   const [adminLogin, setAdminLogin] = useState(false)
 
-  const baseUrl = "https://quickstay-f66g.onrender.com/";
+  const baseUrl = "https://quickstay-f66g.onrender.com";
 
 
   const handleLoginButton = async () => {
