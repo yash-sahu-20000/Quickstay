@@ -14,7 +14,7 @@ import Select from 'react-select'
 
 export default function AdminDashboard() {
   
-    const baseUrl = `https://quickstay-f66g.onrender.com`;
+    const baseUrl = "https://quickstay-f66g.onrender.com";
     const user = useSelector(state => state.auth.user)
     const [isAdmin, setIsAdmin] = useState(false)
     const [selectedHotelImage, setSelectedHotelImage] = useState([]);

@@ -6,12 +6,13 @@ const useFetch = (url) => {
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(null)
     const [error, setError] = useState(null)
+  const baseUrl = "https://quickstay-f66g.onrender.com";
 
     useEffect(()=>{
         const fetchData = async (url) => {
             try {
                 setLoading(true);
-                const res = await axios.get('http://localhost:1001'+url, { withCredentials: true })
+                const res = await axios.get(baseUrl+url, { withCredentials: true })
                 setResponse(res);
                 setLoading(false);
             } catch (error) {
@@ -27,7 +28,7 @@ const useFetch = (url) => {
     const reFetch =  async () => {
         try {
             setLoading(true);
-            const res = await axios.get('http://localhost:1001'+url,{ withCredentials: true })
+            const res = await axios.get(baseUrl+url,{ withCredentials: true })
             setResponse(res);
             setLoading(false);
         } catch (error) {
