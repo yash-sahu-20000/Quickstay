@@ -1,0 +1,47 @@
+.reserve{
+    padding : 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserveContainer{
+    width: 100%;
+    padding : 30px 20px;
+    padding-bottom: 20px;
+    max-width: 1024px;
+    display: flex;
+    gap:20px;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .reserveHeader{
+        font-size: 40px;
+        font-weight: 600;
+        color: #006ce4;
+    }
+
+    .reserveHotelName{
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    .reserveItems{
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .reserveButton{
+        background-color: #006ce4;
+        margin-left: auto;
+        padding: 15px 20px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;        
+        }
+    }
+}

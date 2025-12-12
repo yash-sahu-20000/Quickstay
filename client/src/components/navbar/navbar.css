@@ -1,0 +1,106 @@
+.navBar{
+    height: 75px;
+    background-color: #003b95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBarContainer{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    padding: 10px 50px;
+
+        
+    .navBarLogo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        }
+
+    .navBarItems{
+        display: flex;
+        .navBarButton{
+            padding: 5px 10px;
+            margin: 5px;
+            width: 100px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #006ce4;
+            font-size: 15px;
+            cursor: pointer;
+            &:hover{
+                background-color: #0258bb;
+                color: white;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+        }
+
+        .navBarUsername{
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 20px;
+            position: relative;
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        
+            .navMenu{
+                position: absolute;
+                width: 130%;
+                top: 30px;
+                color: #0258bb;
+                background-color: white;
+                border-radius: 10px;
+                z-index: 100;
+                
+
+                .navMenuItems{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .navMenuItem{
+                        padding: 10px;
+                        border-bottom: 1px solid lightgray;
+                        cursor: pointer;
+                        &:last-child{
+                            border-bottom: none;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .navBarItems.login{
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        .navBarLogo , .navBarItems{
+            display: flex;
+            justify-content: center; 
+        }
+        .navBarButton{
+            flex:1;
+            max-width: 100px;
+
+        }
+    }
+
+
+}
