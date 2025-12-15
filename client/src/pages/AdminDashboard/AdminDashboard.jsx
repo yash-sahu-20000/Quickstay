@@ -242,7 +242,9 @@ export default function AdminDashboard() {
         if (['createroom'].includes(operation)){
 
             try {
-                const response = await axios.post(`${baseUrl}/rooms/${selectedHotelForUpdate._id}`, formDataRoom);
+                const response = await axios.post(`${baseUrl}/rooms/${selectedHotelForUpdate._id}`, formDataRoom,{
+                    withCredentials: true
+                  });
                 console.log('Room created:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Creation Success','success')
@@ -259,7 +261,9 @@ export default function AdminDashboard() {
         else if (['updateroom'].includes(operation)){
 
             try {
-                const response = await axios.put(`${baseUrl}/rooms/${selectedRoomForUpdate?.room?._id}`, formDataRoom);
+                const response = await axios.put(`${baseUrl}/rooms/${selectedRoomForUpdate?.room?._id}`, formDataRoom,{
+                    withCredentials: true
+                  });
                 console.log('Room updated:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Updated Success','success')
@@ -274,7 +278,9 @@ export default function AdminDashboard() {
         }
         else if (['deleteroom'].includes(operation)){
             try {
-                const response = await axios.delete(`${baseUrl}/rooms/${selectedRoomForDelete?.room?._id}/${selectedRoomForDelete?.hotel?._id}`)
+                const response = await axios.delete(`${baseUrl}/rooms/${selectedRoomForDelete?.room?._id}/${selectedRoomForDelete?.hotel?._id}`,{
+                    withCredentials: true
+                  })
                 console.log('Room Deleted:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Delete Success','success')
@@ -293,7 +299,9 @@ export default function AdminDashboard() {
         if (['updateuser'].includes(operation)){
 
             try {
-                const response = await axios.put(`${baseUrl}/users/${selectedUserForUpdate._id}`, formDataUser);
+                const response = await axios.put(`${baseUrl}/users/${selectedUserForUpdate._id}`, formDataUser,{
+                    withCredentials: true
+                  });
                 console.log('User updated:', response.data);
                 if (response.status == '200'){
                     notification('User','User Updated Success','success')
@@ -309,7 +317,9 @@ export default function AdminDashboard() {
         }
         else if (['deleteuser'].includes(operation)){
             try {
-              const response = await axios.delete(`${baseUrl}/users/${selectedUserForDelete._id}`);
+              const response = await axios.delete(`${baseUrl}/users/${selectedUserForDelete._id}`,{
+                    withCredentials: true
+                  });
               console.log('User Deleted:', response.data);
                 if (response.status == '200'){
                     notification('User','User Delete Success','success')
@@ -329,7 +339,9 @@ export default function AdminDashboard() {
         if (['createadmin'].includes(operation)){
 
             try {
-                const response = await axios.post(`${baseUrl}/auth/register/admin`, formDataAdmin);
+                const response = await axios.post(`${baseUrl}/auth/register/admin`, formDataAdmin,{
+                    withCredentials: true
+                  });
                 console.log('Admin created:', response.data);
                 if (response.status == '200'){
                     notification('Admin','Admin created Success','success')
@@ -376,7 +388,9 @@ export default function AdminDashboard() {
               selectedUserForDeleteBooking.bookingDetails = existingBookings.filter(x => !(selectedBookingForDeleteBooking._id === x._id))
               const resp = await axios.put(`${baseUrl}/users/${selectedUserForDeleteBooking._id}`,{
                   bookingDetails: selectedUserForDeleteBooking.bookingDetails
-              })
+              },{
+                    withCredentials: true
+                  })
               if (resp.status == '200'){
                 notification('Booking','Booking Delete Success','success')
             }
