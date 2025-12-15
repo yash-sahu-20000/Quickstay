@@ -1,31 +1,28 @@
-.list{
+.list {
     display: flex;
-    justify-content: center
-
+    justify-content: center;
 }
 
-.listContainer{
+.listContainer {
     display: flex;
     width: 100%;
-    padding : 10px;
+    padding: 10px;
     padding-bottom: 20px;
     max-width: 1500px;
     gap: 20px;
+}
 
+.listContainer .listHotel {
+    flex-grow: 1;
+}
 
-
-
-    .listHotel{
-        flex-grow: 1;
-    }
-
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
+    .listContainer {
         flex-direction: column;
     }
 }
 
-
-.listSearchBarContainer{
+.listSearchBarContainer {
     display: flex;
     padding: 20px;
     background-color: #ffb029;
@@ -35,88 +32,96 @@
     border-radius: 10px;
     position: sticky;
     top: 10px;
+}
 
-    .listSearchBarHeader{
-        font-size: 25px;
-        font-weight: 600;
+.listSearchBarContainer .listSearchBarHeader {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.listSearchBarContainer .listSearchBarItems {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.listSearchBarContainer .listSearchBarItems .listSearchBoxLeft {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    position: relative;
+}
+
+.listSearchBarContainer .listSearchBarItems .listSearchBoxLeft .listSearchBarInputHeader {
+    font-size: 17px;
+}
+
+.listSearchBarContainer .listSearchBarItems .listSearchBoxLeft .listSearchBarInput {
+    padding: 5px;
+    width: 175px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.listSearchBarContainer .listSearchBarItems .listSearchBoxLeft .listSearchBarDatePicker {
+    position: absolute;
+    top: 200px;
+    border: 2px solid lightgray;
+}
+
+.listSearchBarContainer
+.listSearchBarItems
+.listSearchBoxLeft
+.listSearchBarDatePicker
+.rdrDefinedRangesWrapper {
+    display: none;
+}
+
+.listSearchBarContainer .listSearchBarItems .listSearchBoxRight {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.listSearchBarContainer
+.listSearchBarItems
+.listSearchBoxRight
+.listSearchBoxRightInput {
+    display: flex;
+    align-content: center;
+}
+
+.listSearchBarContainer
+.listSearchBarItems
+.listSearchBoxRight
+.listSearchBoxRightInput
+.listSearchBarInput {
+    padding: 5px;
+    width: 175px;
+    border-radius: 5px;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .listSearchBarContainer .listSearchBarItems {
+        flex-direction: row;
     }
-    .listSearchBarItems{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+}
 
-        .listSearchBoxLeft{
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            
+.listSearchBarContainer .listSearchBarButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    margin-top: 10px;
+    color: #006ce4;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 7px;
+}
 
-            .listSearchBarInputHeader{
-                font-size: 17px;
-            }
-            .listSearchBarInput{
-                padding : 5px;
-                width: 175px;
-                border-radius: 5px;
-                outline: none;
-            }
-
-            position: relative;
-            .listSearchBarDatePicker{
-                position: absolute;
-                top: 200px;
-                border: 2px solid lightgray;
-
-                .rdrDefinedRangesWrapper{
-                    display: none;
-                }
-            }
-
-        }
-
-        .listSearchBoxRight{
-            display: flex;
-            
-            flex-direction: column;
-            gap: 10px;
-
-            .listSearchBoxRightInput{
-                display: flex;
-                align-content: center;
-                .listSearchBarInput{
-                    padding : 5px;
-                    width: 175px;
-                    border-radius: 5px;
-                    outline: none;
-                }
-            }
-
-        }
-
-        @media (max-width: 768px) {
-            flex-direction: row;
-        }
-
-
-
-    }
-
-    .listSearchBarButton{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-        background-color: white;
-        margin-top: 10px;
-        color: #006ce4;
-        font-size: 17px;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 7px;
-
-        &:hover{
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;        
-        }
-    }
-
+.listSearchBarContainer .listSearchBarButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

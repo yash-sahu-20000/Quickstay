@@ -1,70 +1,74 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
     width: 270px;
     padding: 5px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            
-    .cardImage{
-        img{
-            width: 100%;
-            height: 200px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-    }
-    .cardDetails{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 12px;
+}
 
-        .cardTitle{
-            display: flex;
-            align-items: center;
-        }
-        
-        .cardSubtitle{
-            color: grey;
-            font-weight: 400;
-        }
-        
-        .cardRating{
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            color: rgb(7, 167, 7)
-        }
-        .cardReview{
-            color: grey;
-            font-weight: 400;
-        }
-        .cardPrice{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap:10px;
-            .cardMrp{
-                text-decoration: line-through;
-                color: #e6767c;
-            }
-            .cardPrice{
-                font-size: 17px;
-                font-weight: 500;
-            }
-        }
-        .cardNight{
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            color: grey;
-            font-weight: 400;        
-        }
-    }
+.card .cardImage img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
-    &:hover{
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
+.card .cardDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+}
+
+.card .cardDetails .cardTitle {
+    display: flex;
+    align-items: center;
+}
+
+.card .cardDetails .cardSubtitle {
+    color: grey;
+    font-weight: 400;
+}
+
+.card .cardDetails .cardRating {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgb(7, 167, 7);
+}
+
+.card .cardDetails .cardReview {
+    color: grey;
+    font-weight: 400;
+}
+
+.card .cardDetails .cardPrice {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.card .cardDetails .cardPrice .cardMrp {
+    text-decoration: line-through;
+    color: #e6767c;
+}
+
+.card .cardDetails .cardPrice .cardPrice {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.card .cardDetails .cardNight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: grey;
+    font-weight: 400;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

@@ -1,49 +1,45 @@
-.home{
+.home {
     width: 100%;
-    padding : 10px;
+    padding: 10px;
     padding-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.homeContainer{
+.homeContainer {
     width: 100%;
-    padding : 30px 20px;
+    padding: 30px 20px;
     padding-bottom: 20px;
     max-width: 1500px;
-
-    .homeList { 
-        padding: 10px;
-        color: #3e332c;
-
-
-        .homeListTitle{
-            h1{
-                font-weight: 600;
-                font-size: 40px;
-                padding-bottom: 10px;
-                padding-top: 5px;
-            }
-        }
-        .homeListSubtitle{
-            h2{
-                font-size: 20px;
-                padding-bottom: 10px;
-                padding-top: 5px;
-            }
-        }
-        .homeListCards{
-            display: flex;
-            flex-wrap: wrap;
-            gap:15px;
-
-            @media (max-width: 768px) {
-                justify-content: space-around;
-            }
-        }
-    }
-
-
 }
 
+.homeContainer .homeList {
+    padding: 10px;
+    color: #3e332c;
+}
+
+.homeContainer .homeList .homeListTitle h1 {
+    font-weight: 600;
+    font-size: 40px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.homeContainer .homeList .homeListSubtitle h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.homeContainer .homeList .homeListCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .homeContainer .homeList .homeListCards {
+        justify-content: space-around;
+    }
+}

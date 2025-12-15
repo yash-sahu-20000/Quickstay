@@ -1,77 +1,68 @@
-.featured{
-
+.featured {
     padding: 10px 0px 10px 0px;
-
-    .featuredTitle{
-        h1{
-            color: #3e332c;
-            font-weight: 600;
-            font-size: 40px;
-        }
-    }
-    .featuredDescription{
-        h2{
-            color: #3e332c;
-            font-weight: 600;
-            font-size: 20px;
-            padding-bottom: 5px;
-            padding-top: 5px;
-        }
-    }
-
-    .featuredImages{
-
-        display: flex;
-
-        img {
-            width: 220px; 
-            height: 170px; 
-            margin: 10px; 
-            border-radius: 8px; 
-            
-        }
-        .imageGalleryList{
-            display: flex;
-            width: 100%;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            
-            
-
-            .imageBlock{
-                display: flex;
-                flex-direction: column;
-                cursor: pointer;
-
-                
-                
-                .imageTitle{
-                    padding: 5px;
-                    font-weight: 600;
-                    font-size: 15px;
-                    display: flex;
-                    margin-left: 20px;
-                }
-                .imageDescription{
-                    margin-left: 15px;
-                    font-size: 15px;
-                    color: rgb(175, 173, 173);
-                    padding : 5px
-                }
-
-                &:hover{
-                    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-                }
-            
-            }
-
-            @media (max-width: 768px) {
-                justify-content: space-around;
-            }
-
-
-        }
-    }
 }
 
+.featured .featuredTitle h1 {
+    color: #3e332c;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.featured .featuredDescription h2 {
+    color: #3e332c;
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.featured .featuredImages {
+    display: flex;
+}
+
+.featured .featuredImages img {
+    width: 220px;
+    height: 170px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.featured .featuredImages .imageGalleryList {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.featured .featuredImages .imageGalleryList .imageBlock {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.featured .featuredImages .imageGalleryList .imageBlock .imageTitle {
+    padding: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.featured .featuredImages .imageGalleryList .imageBlock .imageDescription {
+    margin-left: 15px;
+    font-size: 15px;
+    color: rgb(175, 173, 173);
+    padding: 5px;
+}
+
+.featured .featuredImages .imageGalleryList .imageBlock:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+                rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+@media (max-width: 768px) {
+    .featured .featuredImages .imageGalleryList {
+        justify-content: space-around;
+    }
+}

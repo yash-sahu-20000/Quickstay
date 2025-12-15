@@ -1,4 +1,4 @@
-.bookingBox{
+.bookingBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,35 +6,37 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 20px;
     cursor: pointer;
+}
 
-    .leftContainer{
 
-        .hotelName{
-            font-size: 25px;
-            padding: 10px 0px;
-            font-weight: 500;
-        }
-        .bookingRoomNumbers{
-            .bookingRoomNumber{
-                background-color: #0258bb;
-                display: inline;
-                padding: 5px;
-                margin : 0px 10px;
-                color: white;
-                border-radius: 5px;
-            }   
-            font-weight: 500;
 
-        }
-        .bookingId{
-            padding-top: 15px;
-            color: rgb(192, 191, 191);
-            font-size: 15px;
-        }
-        .checkin{
-            font-size: 15px;
-            font-weight: 500;
-            padding-top: 10px;
-        }
-    }
+.bookingBox .leftContainer .hotelName {
+    font-size: 25px;
+    padding: 10px 0px;
+    font-weight: 500;
+}
+
+.bookingBox .leftContainer .bookingRoomNumbers {
+    font-weight: 500;
+}
+
+.bookingBox .leftContainer .bookingRoomNumbers .bookingRoomNumber {
+    background-color: #0258bb;
+    display: inline;
+    padding: 5px;
+    margin: 0px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.bookingBox .leftContainer .bookingId {
+    padding-top: 15px;
+    color: rgb(192, 191, 191);
+    font-size: 15px;
+}
+
+.bookingBox .leftContainer .checkin {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
 }

@@ -1,212 +1,229 @@
-.header{
+.header {
     background-color: #003b95;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.headerContainer{
+.headerContainer {
     width: 100%;
-    padding : 10px;
+    padding: 10px;
     padding-bottom: 20px;
     max-width: 1500px;
+}
 
-    .headerList{
-        display: flex;
-        max-width: 900px;
-        justify-content: space-evenly;
-        cursor: pointer;
-    
-        .headerIcons{
-            padding: 10px;
-            color: white;
-            font-size: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            span{
-                padding: 10px;
-                font-size: 20px;
-            }
-            @media (max-width: 768px) {
-                font-size: 30px;
-                span{
-                    display: none;
-                }   
-            }
+.headerContainer .headerList {
+    display: flex;
+    max-width: 900px;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
 
-        }
+.headerContainer .headerList .headerIcons {
+    padding: 10px;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        div.headerIcons:nth-of-type(1){
-            border-radius: 40px;
-            border: 2px solid white;
-        }
-        
-    }
-   
-    .headerAdLine{
-        padding: 50px 50px;
-        color: white;
+.headerContainer .headerList .headerIcons span {
+    padding: 10px;
+    font-size: 20px;
+}
 
-        h1{
-            font-size: 60px;
-            @media (max-width: 768px) {
-                font-size: 30px;
-            }
-        }
-        h3{
-            padding: 50px 0px 10px 0px;
-            @media (max-width: 768px) {
-                font-size: 15px;
-            }
-        }
-        .headerAdLineButtion{
-            background-color: #006ce4;
-            padding: 10px;
-            margin-top: 20px;
-            font-weight: 600;
-            border-radius: 5px;
-            display: inline-block;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-                &:hover{
-                    background-color: #0258bb;
-                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-                }
-            }
-
-        }
-    .headerAdLine.listMode{
-        display: none;
+@media (max-width: 768px) {
+    .headerContainer .headerList .headerIcons {
+        font-size: 30px;
     }
 
-
-    .headerSearchBarContainer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-
-        .headerSearchBar{
-            color: lightgrey;
-            background-color: #ffffff;
-            border: 4px solid #ffb702;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            font-size: 30px;
-            padding: 10px;
-            justify-content: space-between;
-            gap: 10px;
-            @media (max-width: 768px) {
-                flex-direction: column;
-                width: 60%;
-            }
-            
-            .headerSearchBarItem{
-                display: flex;
-                gap: 15px;
-                border: none;
-                @media (max-width: 768px) {
-                    width: 100%;
-                    gap: 30px;
-                }
-                position: relative;
-
-                
-                .headerSearchBarDatePicker{
-                    position: absolute;
-                    top: 50px;
-                    border: 2px solid lightgray;
-                    @media (max-width: 768px) {
-                        top: 30px;
-                        left: 50px;
-                        z-index: 10000;
-                    }
-                    .rdrDefinedRangesWrapper{
-                        display: none;
-                    }
-                }
-                .headerSearchBarPersonBox{
-                    position: absolute;
-                    color: black;
-                    border: 2px solid lightgray;
-                    background-color: white;
-                    padding: 10px;
-                    display: flex;
-                    gap: 5px;
-                    flex-direction: column;
-                    top: 50px;
-
-                    @media (max-width: 768px) {
-                        top: 30px;
-                        left: 50px;
-                        z-index: 10000;
-                    }
-
-                    .headerSeachBarPersonBoxItem{
-                        display: flex;
-                        width: 200px;
-                        justify-content: center;
-                        align-items: center;
-                        font-size: 18px;
-                    
-                        .headerSeachBarPersonBoxItemText{
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100px;
-                        }
-                        .headerSeachBarPersonBoxItemButton{
-                            cursor: pointer;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                        }
-                        
-                    
-                    }
-                    
-                }
-            }
-            
-            .headerSearchBarIcon{
-                display: flex;
-                justify-content: center;
-                align-items:center;
-            }
-            
-            .headerSearchInput{
-                display: flex;
-                align-items: center;
-                outline: none;
-                width: 175px;
-
-            }
-
-
-            
-            .headerSearchButton{
-                background-color: #006ce4;
-                font-size: 15px;
-                font-weight: 600;
-                border-radius: 10px;
-                display: inline-block;
-                color: white;
-                padding: 10px;
-                cursor: pointer;
-                &:hover{
-                    background-color: #0258bb;
-                    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-                }
-            }
-        }
-
-    }
-
-    .headerSearchBarContainer.listMode{
+    .headerContainer .headerList .headerIcons span {
         display: none;
     }
 }
 
+.headerContainer .headerList div.headerIcons:nth-of-type(1) {
+    border-radius: 40px;
+    border: 2px solid white;
+}
+
+.headerContainer .headerAdLine {
+    padding: 50px 50px;
+    color: white;
+}
+
+.headerContainer .headerAdLine h1 {
+    font-size: 60px;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerAdLine h1 {
+        font-size: 30px;
+    }
+}
+
+.headerContainer .headerAdLine h3 {
+    padding: 50px 0px 10px 0px;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerAdLine h3 {
+        font-size: 15px;
+    }
+}
+
+.headerContainer .headerAdLine .headerAdLineButtion {
+    background-color: #006ce4;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.headerContainer .headerAdLine .headerAdLineButtion:hover {
+    background-color: #0258bb;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.headerContainer .headerAdLine.listMode {
+    display: none;
+}
+
+.headerContainer .headerSearchBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar {
+    color: lightgrey;
+    background-color: #ffffff;
+    border: 4px solid #ffb702;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerSearchBarContainer .headerSearchBar {
+        flex-direction: column;
+        width: 60%;
+    }
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem {
+    display: flex;
+    gap: 15px;
+    border: none;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem {
+        width: 100%;
+        gap: 30px;
+    }
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarDatePicker {
+    position: absolute;
+    top: 50px;
+    border: 2px solid lightgray;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarDatePicker {
+        top: 30px;
+        left: 50px;
+        z-index: 10000;
+    }
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarDatePicker .rdrDefinedRangesWrapper {
+    display: none;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarPersonBox {
+    position: absolute;
+    color: black;
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    top: 50px;
+}
+
+@media (max-width: 768px) {
+    .headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarPersonBox {
+        top: 30px;
+        left: 50px;
+        z-index: 10000;
+    }
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarPersonBox .headerSeachBarPersonBoxItem {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarPersonBox .headerSeachBarPersonBoxItem .headerSeachBarPersonBoxItemText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarItem .headerSearchBarPersonBox .headerSeachBarPersonBoxItem .headerSeachBarPersonBoxItemButton {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchBarIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchInput {
+    display: flex;
+    align-items: center;
+    outline: none;
+    width: 175px;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchButton {
+    background-color: #006ce4;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.headerContainer .headerSearchBarContainer .headerSearchBar .headerSearchButton:hover {
+    background-color: #0258bb;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.headerContainer .headerSearchBarContainer.listMode {
+    display: none;
+}
