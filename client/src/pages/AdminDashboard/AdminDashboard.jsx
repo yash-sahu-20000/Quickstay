@@ -381,7 +381,10 @@ export default function AdminDashboard() {
                   }
                   const resp = await axios.put(`${baseUrl}/rooms/${room.roomId}`,
                       currRoom
-                  )
+                  ,
+                  {
+                    withCredentials: true
+                  })
                   console.log(resp);
 
               }

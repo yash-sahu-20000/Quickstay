@@ -71,6 +71,9 @@ export default function Reserve() {
               ...auth.user.bookingDetails,
               bookingDetails
             ]
+          },
+          {
+            withCredentials: true
           })
           const savedBookingDetails = res.data.bookingDetails;
           dispatch(bookingSuccess(savedBookingDetails))
@@ -96,6 +99,9 @@ export default function Reserve() {
               roomToUpdate.unavailableDate = updatedUnavailableDates;
               const r = await axios.put(`${baseUrl}/rooms/${roomId}`, {
                 ...curRoom.data
+              },
+              {
+                withCredentials: true
               })
           }
         navigate('/')
