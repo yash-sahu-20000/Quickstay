@@ -39,7 +39,7 @@ export const seedAll = async (req, res, next) => {
         //   `https://example.com/${city.toLowerCase()}-${i + 1}-2.jpg`
         // ],
         title: `Comfort stay in ${city}`,
-        desc: `Sample description for hotel ${i + 1} in ${city}.`,
+        description: `Sample description for hotel ${i + 1} in ${city}.`,
         rating: 3.5 + (i % 10) * 0.1,
         rooms: [],
         cheapestPrice: basePrice,
@@ -59,7 +59,7 @@ export const seedAll = async (req, res, next) => {
         title: `Room Type ${i + 1}`,
         price: 1000 + (i % 10) * 150,
         maxPeople: 1 + (i % 4),
-        desc: `Sample room description ${i + 1}.`,
+        description: `Sample room description ${i + 1}.`,
         roomNumbers: [
           { number: 100 + i * 2, unavailableDates: [] },
           { number: 101 + i * 2, unavailableDates: [] }
