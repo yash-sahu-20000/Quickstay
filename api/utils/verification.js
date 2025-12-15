@@ -11,6 +11,7 @@ export const verifyToken = (req, res, next) => {
     }
     
     const token = req.cookies.access_token;
+    console.log("token : "+token);
     jwt.verify(token, process.env.JWTKEY, (err, userObtained)=>{
         if (err){
             return next(createError(400, 'Invalid Token'))
