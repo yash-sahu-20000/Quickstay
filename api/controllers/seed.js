@@ -69,7 +69,7 @@ export const seedAll = async (req, res, next) => {
     }
 
     const rooms = await Room.insertMany(roomPayload);
-    console.log(roomPayload[0].toString());
+    console.log("roommpayload[0]:"+roomPayload[0].toString());
     // Update hotels with rooms
     const roomsByHotel = {};
     roomPayload.forEach(r => {
