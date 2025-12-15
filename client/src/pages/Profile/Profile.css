@@ -1,3 +1,9 @@
+/*
+ * Profile.css - Flattened Structure
+ * This version uses standard CSS selectors to avoid issues with
+ * preprocessor-dependent nesting.
+ */
+
 .profile{
     padding : 10px;
     padding-bottom: 20px;
@@ -16,62 +22,83 @@
     align-items: flex-start;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
 
+/* --- Profile Header --- */
+.profileContainer .profileHeader{
+    font-size: 40px;
+    font-weight: 600;
+    color: #006ce4;
+}
 
-    .profileHeader{
-        font-size: 40px;
-        font-weight: 600;
-        color: #006ce4;
+/* --- Profile Details (The main form section) --- */
+.profileContainer .profileDetails{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+/* --- Profile Details Item (Individual Row) --- */
+.profileContainer .profileDetails .profileDetailsItem{
+    display: flex;
+    /* Uncommenting these original flex properties to ensure horizontal layout within the item */
+    gap: 20px;
+    align-items: center;
+}
+
+.profileContainer .profileDetails .profileDetailsItem .profileDetailsItemLabel{
+    font-size: 20px;
+}
+
+/* --- Profile Details Field (Input Container) --- */
+.profileContainer .profileDetails .profileDetailsItem .profileDetailsItemField{
+    display: flex;
+    align-items: center;
+}
+
+.profileContainer .profileDetails .profileDetailsItem .profileDetailsItemField .profileDetailsItemFieldInput{
+    display: flex;
+    align-items: center;
+    outline: none;
+    width: 300px;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+/* --- Profile Details Description (The "Can not be changed" text) --- */
+.profileContainer .profileDetails .profileDetailsItem .profileDetailsItemDesc{
+    color: rgb(203, 202, 202);
+}
+
+/* Media query for hiding the description on small screens */
+@media (max-width: 768px) {
+    .profileContainer .profileDetails .profileDetailsItem .profileDetailsItemDesc{
+        display: none;
     }
-    .profileDetails{
+}
+
+/* --- Profile Update Button --- */
+.profileContainer .profileUpdateButton{
+    background-color: #006ce4;
+    margin-left: auto;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hover state for the update button */
+.profileContainer .profileUpdateButton:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Media query for the update button on small screens */
+@media (max-width: 768px) {
+    .profileContainer .profileUpdateButton{
+        margin: 0px auto;
+        width: 100px;
         display: flex;
-        gap: 20px;
-        flex-direction: column;
-
-        .profileDetailsItem{
-            display: flex;
-            /* gap: 20px;
-            align-items: center; */
-            .profileDetailsItemLabel{
-                font-size: 20px;
-            }
-            .profileDetailsItemField{
-                display: flex;
-                align-items: center;
-                .profileDetailsItemFieldInput{
-                    display: flex;
-                    align-items: center;
-                    outline: none;
-                    width: 300px;
-                    font-size: 20px;
-                    background-color: transparent;
-                }
-            }
-            .profileDetailsItemDesc{
-                color: rgb(203, 202, 202);
-
-                @media (max-width: 768px) {
-                    display: none;
-                }
-            }
-        }
-    }
-    .profileUpdateButton{
-        background-color: #006ce4;
-        margin-left: auto;
-        padding: 15px 20px;
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-        &:hover{
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;        
-        }
-        @media (max-width: 768px) {
-            margin: 0px auto;
-            width: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        align-items: center;
+        justify-content: center;
     }
 }
