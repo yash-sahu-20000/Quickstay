@@ -1,9 +1,3 @@
-/*
- * Profile.css - Flattened Structure
- * This version uses standard CSS selectors to avoid issues with
- * preprocessor-dependent nesting.
- */
-
 .profile{
     padding : 10px;
     padding-bottom: 20px;
@@ -24,24 +18,20 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-/* --- Profile Header --- */
 .profileContainer .profileHeader{
     font-size: 40px;
     font-weight: 600;
     color: #006ce4;
 }
 
-/* --- Profile Details (The main form section) --- */
 .profileContainer .profileDetails{
     display: flex;
     gap: 20px;
     flex-direction: column;
 }
 
-/* --- Profile Details Item (Individual Row) --- */
 .profileContainer .profileDetails .profileDetailsItem{
     display: flex;
-    /* Uncommenting these original flex properties to ensure horizontal layout within the item */
     gap: 20px;
     align-items: center;
 }
@@ -50,7 +40,6 @@
     font-size: 20px;
 }
 
-/* --- Profile Details Field (Input Container) --- */
 .profileContainer .profileDetails .profileDetailsItem .profileDetailsItemField{
     display: flex;
     align-items: center;
@@ -65,19 +54,16 @@
     background-color: transparent;
 }
 
-/* --- Profile Details Description (The "Can not be changed" text) --- */
 .profileContainer .profileDetails .profileDetailsItem .profileDetailsItemDesc{
     color: rgb(203, 202, 202);
 }
 
-/* Media query for hiding the description on small screens */
 @media (max-width: 768px) {
     .profileContainer .profileDetails .profileDetailsItem .profileDetailsItemDesc{
         display: none;
     }
 }
 
-/* --- Profile Update Button --- */
 .profileContainer .profileUpdateButton{
     background-color: #006ce4;
     margin-left: auto;
@@ -87,12 +73,10 @@
     cursor: pointer;
 }
 
-/* Hover state for the update button */
 .profileContainer .profileUpdateButton:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* Media query for the update button on small screens */
 @media (max-width: 768px) {
     .profileContainer .profileUpdateButton{
         margin: 0px auto;
