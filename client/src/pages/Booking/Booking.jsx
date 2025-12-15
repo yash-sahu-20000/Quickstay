@@ -63,7 +63,9 @@ export default function Booking() {
                 user.bookinDetails = existingBookings.filter(booking => !selectedBooking.includes(booking._id))
                 const resp = await axios.put(`${baseUrl}/users/${user._id}`,{
                     bookingDetails: user.bookinDetails
-                })
+                },{
+                    withCredentials: true
+                  })
                 dispatch(bookingCancelled(user.bookinDetails))
 
 
