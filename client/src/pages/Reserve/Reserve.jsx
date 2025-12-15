@@ -65,7 +65,7 @@ export default function Reserve() {
   
         
         try {
-          const res = await axios.put(`/users/${auth.user._id}`,{
+          const res = await axios.put(`${baseUrl}/users/${auth.user._id}`,{
             bookingDetails: [
               ...auth.user.bookingDetails,
               bookingDetails
@@ -83,7 +83,7 @@ export default function Reserve() {
   
           for (const room of rooms) {
             const {roomNumber, roomId} =  room
-            const curRoom = await axios.get(`/rooms/${roomId}`)
+            const curRoom = await axios.get(`${baseUrl}/rooms/${roomId}`)
             const roomToUpdate = curRoom.data.roomNumber.find(r => r.Number === roomNumber);
             let updatedUnavailableDates = []
             if (roomToUpdate) {
@@ -93,7 +93,7 @@ export default function Reserve() {
               ];
             }
               roomToUpdate.unavailableDate = updatedUnavailableDates;
-              const r = await axios.put(`/rooms/${roomId}`, {
+              const r = await axios.put(`${baseUrl}/rooms/${roomId}`, {
                 ...curRoom.data
               })
           }

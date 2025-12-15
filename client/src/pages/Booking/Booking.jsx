@@ -39,7 +39,7 @@ export default function Booking() {
                         const rooms = booking.roomNumber;
     
                         for (const room of rooms){
-                            const res = await axios.get(`/rooms/${room.roomId}`)
+                            const res = await axios.get(`${baseUrl}/rooms/${room.roomId}`)
                             const currRoom = res.data
                             const roomToUpdate = currRoom.roomNumber.find(r=> r.Number == room.roomNumber)
                             if(roomToUpdate){
@@ -47,7 +47,7 @@ export default function Booking() {
                                 let removableDatess = removableDates.map((date)=> (normalizeDate(convertUTCtoIST(date)).toDateString()))
                                 roomToUpdate.unavailableDate = roomToUpdate.unavailableDate.filter(date => !removableDatess.includes(date))
                             }
-                            const resp = await axios.put(`/rooms/${room.roomId}`,
+                            const resp = await axios.put(`${baseUrl}/rooms/${room.roomId}`,
                                 currRoom
                             )
                             console.log(resp);
@@ -57,7 +57,7 @@ export default function Booking() {
                     }
 
                 user.bookinDetails = existingBookings.filter(booking => !selectedBooking.includes(booking._id))
-                const resp = await axios.put(`/users/${user._id}`,{
+                const resp = await axios.put(`${baseUrl}/users/${user._id}`,{
                     bookingDetails: user.bookinDetails
                 })
                 dispatch(bookingCancelled(user.bookinDetails))

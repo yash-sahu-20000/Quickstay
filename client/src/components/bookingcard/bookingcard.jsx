@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 import './bookingcard.css'
 import { convertUTCtoIST, normalizeDate } from '../../utils/functions'
+import { baseUrl } from '../../config'
 
 export default function BookingCard(props) {
   

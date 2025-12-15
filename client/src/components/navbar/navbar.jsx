@@ -6,6 +6,7 @@ import { logout } from '../../redux/authReducer/authReducer'
 import { resetSearch } from '../../redux/searchReducer/searchReducer'
 import { ReactNotifications } from 'react-notifications-component'
 import axios from 'axios'
+import { baseUrl } from '../../config'
 
 function Navbar(props) {
 
@@ -35,7 +36,7 @@ function Navbar(props) {
   useEffect(()=>{
     const fetchAdminStatus = async () => {
         try {
-            const res = await axios.get(`/auth/isAdmin`,
+            const res = await axios.get(`${baseUrl}/auth/isAdmin`,
       {
         withCredentials: true
       });

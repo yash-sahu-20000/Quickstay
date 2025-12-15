@@ -28,7 +28,7 @@ export default function Profile() {
                 mobile: mob
             }
             try {
-                const res = await axios.put(`/users/${user._id}`, updatedUser)
+                const res = await axios.put(`${baseUrl}/users/${user._id}`, updatedUser)
                 if (res.status == 200){
                     notification('Updated','User details updated','success')
                 }

@@ -205,7 +205,7 @@ export default function AdminDashboard() {
         else if (['updatehotel'].includes(operation)){
             
             try {
-                const response = await axios.put(`/hotels/${selectedHotelForUpdate._id}`, formDataHotel);
+                const response = await axios.put(`${baseUrl}/hotels/${selectedHotelForUpdate._id}`, formDataHotel);
                 console.log('Hotel updated:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Updated Success','success')
@@ -219,7 +219,7 @@ export default function AdminDashboard() {
         }
         else if (['deletehotel'].includes(operation)){
             try {
-                const response = await axios.delete(`/hotels/${selectedHotelForDelete._id}`)
+                const response = await axios.delete(`${baseUrl}/hotels/${selectedHotelForDelete._id}`)
                 console.log('Hotel updated:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Delete Success','success')
@@ -236,7 +236,7 @@ export default function AdminDashboard() {
         if (['createroom'].includes(operation)){
 
             try {
-                const response = await axios.post(`/rooms/${selectedHotelForUpdate._id}`, formDataRoom);
+                const response = await axios.post(`${baseUrl}/rooms/${selectedHotelForUpdate._id}`, formDataRoom);
                 console.log('Room created:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Creation Success','success')
@@ -253,7 +253,7 @@ export default function AdminDashboard() {
         else if (['updateroom'].includes(operation)){
 
             try {
-                const response = await axios.put(`/rooms/${selectedRoomForUpdate?.room?._id}`, formDataRoom);
+                const response = await axios.put(`${baseUrl}/rooms/${selectedRoomForUpdate?.room?._id}`, formDataRoom);
                 console.log('Room updated:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Updated Success','success')
@@ -268,7 +268,7 @@ export default function AdminDashboard() {
         }
         else if (['deleteroom'].includes(operation)){
             try {
-                const response = await axios.delete(`/rooms/${selectedRoomForDelete?.room?._id}/${selectedRoomForDelete?.hotel?._id}`)
+                const response = await axios.delete(`${baseUrl}/rooms/${selectedRoomForDelete?.room?._id}/${selectedRoomForDelete?.hotel?._id}`)
                 console.log('Room Deleted:', response.data);
                 if (response.status == '200'){
                     notification('Room','Room Delete Success','success')
@@ -287,7 +287,7 @@ export default function AdminDashboard() {
         if (['updateuser'].includes(operation)){
 
             try {
-                const response = await axios.put(`/users/${selectedUserForUpdate._id}`, formDataUser);
+                const response = await axios.put(`${baseUrl}/users/${selectedUserForUpdate._id}`, formDataUser);
                 console.log('User updated:', response.data);
                 if (response.status == '200'){
                     notification('User','User Updated Success','success')
@@ -303,7 +303,7 @@ export default function AdminDashboard() {
         }
         else if (['deleteuser'].includes(operation)){
             try {
-              const response = await axios.delete(`/users/${selectedUserForDelete._id}`);
+              const response = await axios.delete(`${baseUrl}/users/${selectedUserForDelete._id}`);
               console.log('User Deleted:', response.data);
                 if (response.status == '200'){
                     notification('User','User Delete Success','success')
@@ -353,7 +353,7 @@ export default function AdminDashboard() {
               const rooms = booking.roomNumber;
 
               for (const room of rooms){
-                  const res = await axios.get(`/rooms/${room.roomId}`)
+                  const res = await axios.get(`${baseUrl}/rooms/${room.roomId}`)
                   const currRoom = res.data
                   const roomToUpdate = currRoom.roomNumber.find(r=> r.Number == room.roomNumber)
                   if(roomToUpdate){
@@ -361,14 +361,14 @@ export default function AdminDashboard() {
                       let removableDatess = removableDates.map((date)=> (normalizeDate(convertUTCtoIST(date)).toDateString()))
                       roomToUpdate.unavailableDate = roomToUpdate.unavailableDate.filter(date => !removableDatess.includes(date))
                   }
-                  const resp = await axios.put(`/rooms/${room.roomId}`,
+                  const resp = await axios.put(`${baseUrl}/rooms/${room.roomId}`,
                       currRoom
                   )
                   console.log(resp);
 
               }
               selectedUserForDeleteBooking.bookingDetails = existingBookings.filter(x => !(selectedBookingForDeleteBooking._id === x._id))
-              const resp = await axios.put(`/users/${selectedUserForDeleteBooking._id}`,{
+              const resp = await axios.put(`${baseUrl}/users/${selectedUserForDeleteBooking._id}`,{
                   bookingDetails: selectedUserForDeleteBooking.bookingDetails
               })
               if (resp.status == '200'){
