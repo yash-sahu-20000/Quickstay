@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+
 
 import authroute from './routes/auth.js';
 import hotelsroute from './routes/hotels.js';
@@ -29,6 +31,7 @@ app.use(cors({
     credentials: true
   }));
 app.use(express.json({ limit: '10mb' }));
+app.use(cookieParser());   
 
 
 app.use('/auth', authroute);
