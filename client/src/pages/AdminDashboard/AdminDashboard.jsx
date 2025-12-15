@@ -26,8 +26,8 @@ export default function AdminDashboard() {
             try {
                 const res = await axios.get(`${baseUrl}/auth/isAdmin`
                   ,{
-        withCredentials: true
-      }
+                    withCredentials: true
+                  }
                 );
                 if (res.status === 200) {
                     setIsAdmin(true);

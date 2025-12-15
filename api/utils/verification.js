@@ -3,14 +3,14 @@ import createError from "./error.js";
 
 export const verifyToken = (req, res, next) => {
     console.log('entered verify token')
-    const cookie = req.headers.cookie
-    console.log("cookie : "+cookie)
+    // const cookie = req.headers.cookie
+    // console.log("cookie : "+cookie)
 
     if (!cookie){
         return next(createError(404, 'Not Authorized'))
     }
     
-    const token = cookie.substring(13)
+    const token = req.cookies.access_token;
     jwt.verify(token, process.env.JWTKEY, (err, userObtained)=>{
         if (err){
             return next(createError(400, 'Invalid Token'))
