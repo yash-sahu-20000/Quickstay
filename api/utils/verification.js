@@ -2,29 +2,28 @@ import jwt from "jsonwebtoken";
 import createError from "./error.js";
 
 export const verifyToken = (req, res, next) => {
-    console.log('entered verify token')
-    // const cookie = req.headers.cookie
-    // console.log("cookie : "+cookie)
+  console.log("entered verify token");
 
+  if (!req.cookies) {
+    return next(createError(401, "Cookies not found"));
+  }
 
-    
-    const token = req.cookies.access_token;
-    if (!token){
-        return next(createError(404, 'Not Authorized'))
+  const token = req.cookies.access_token;
+
+  if (!token) {
+    return next(createError(401, "Not Authorized"));
+  }
+
+  jwt.verify(token, process.env.JWTKEY, (err, user) => {
+    if (err) {
+      return next(createError(403, "Invalid Token"));
     }
-        console.log("token1 : "+req.cookies);
-        console.log("token2: "+req.headers.cookie);
-    console.log("token3 : "+token);
-    jwt.verify(token, process.env.JWTKEY, (err, userObtained)=>{
-        if (err){
-            return next(createError(400, 'Invalid Token'))
-        }
-        else{
-            req.user = userObtained
-            next()
-        }
-    })
-}
+
+    req.user = user;
+    next();
+  });
+};
+
 
 
 export const verifyUser = (req, res, next)=>{
