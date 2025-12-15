@@ -25,7 +25,7 @@ const connectdb = async () => {
 
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://quickstay-1-zspj.onrender.com',
     credentials: true
   }));
 app.use(express.json({ limit: '10mb' }));
