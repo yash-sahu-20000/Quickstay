@@ -35,7 +35,7 @@ export const Home = () => {
     if (temp1 && !temp1.loading && !temp1.error) {
       setTimeout(() => {
         setCountByType(temp1.response); 
-      }, 3000);
+      }, 1000);
     }
   }, [temp1]);
 
@@ -46,7 +46,7 @@ export const Home = () => {
     if (temp2 && !temp2.loading && !temp2.error) {
       setTimeout(() => {
         setCountByPlace(temp2.response); 
-      }, 3000);
+      }, 1000);
     }
   }, [temp2]);
 
