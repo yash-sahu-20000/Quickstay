@@ -42,12 +42,15 @@ export const login = async (req, res, next) => {
 
         const token = jwt.sign({id: user._id, isAdmin: user.isAdmin}, process.env.JWTKEY)
 
-        console.log("token: "+token)
-
         const {password, isAdmin, ...otherDetails} = user._doc;
-        res.cookie('access_token',token,{ //more secure than local storage
-            httpOnly: true //more secure as this does not allow client side JS to access cookie
-        }).status(200).json(otherDetails)
+        res
+      .cookie("access_token", token, {
+        httpOnly: true,
+        sameSite: "lax", 
+        maxAge: 24 * 60 * 60 * 1000 
+      })
+      .status(200)
+      .json(otherDetails);
 
     } catch (error) {
         return next(createError(500, 'User not registered'))

@@ -27,22 +27,36 @@ function Login(props) {
 
 
   const handleLoginButton = async () => {
-    dispatch(loginStart())
-    try {
-      const user = await axios.post(`${baseUrl}/auth/login`,{
+  dispatch(loginStart());
+
+  try {
+    const res = await axios.post(
+      `${baseUrl}/auth/login`,
+      {
         username: userId,
-        password: password
-      })
-      dispatch(loginSuccess(user.data))
-      localStorage.setItem('user',JSON.stringify(user.data))
-      
-      adminLogin ? navigate('/admin') : navigate('/')
-      
-    } catch (error) {
-      dispatch(loginFailure(error.response.data.message))
-      notification('Error',`${error.response.data.message}`,'danger')
-    }
+        password: password,
+      },
+      {
+        withCredentials: true
+      }
+    );
+
+    dispatch(loginSuccess(res.data));
+
+    localStorage.setItem("user", JSON.stringify(res.data));
+
+    adminLogin ? navigate("/admin") : navigate("/");
+
+  } catch (error) {
+    dispatch(loginFailure(error.response?.data?.message));
+    notification(
+      "Error",
+      error.response?.data?.message || "Login failed",
+      "danger"
+    );
   }
+};
+
   const handleRegister = async () => {
     try {
       if (confirmPassword !== password){
