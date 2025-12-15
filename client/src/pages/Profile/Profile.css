@@ -30,8 +30,8 @@
 
         .profileDetailsItem{
             display: flex;
-            gap: 20px;
-            align-items: center;
+            /* gap: 20px;
+            align-items: center; */
             .profileDetailsItemLabel{
                 font-size: 20px;
             }
@@ -48,7 +48,7 @@
                 }
             }
             .profileDetailsItemDesc{
-                color: gray;
+                color: rgb(203, 202, 202);
 
                 @media (max-width: 768px) {
                     display: none;
