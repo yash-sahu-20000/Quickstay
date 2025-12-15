@@ -60,7 +60,7 @@ function Navbar(props) {
               user !== null ? 
               <>
               <div className={props.type == 'login' ? 'navBarItems login' : 'navBarItems'}>
-                <div className="navBarUsername" onMouseEnter={()=>{setOpenMenu(true)}} onMouseLeave={()=>setOpenMenu(false)} >Hi, {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+                <div className="navBarUsername" onClick={()=>{setOpenMenu(!openMenu)}} >Hi, {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
                 {openMenu && 
                   <div className="navMenu">
                     <div className="navMenuItems">
