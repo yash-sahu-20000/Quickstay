@@ -9,6 +9,7 @@ import authroute from './routes/auth.js';
 import hotelsroute from './routes/hotels.js';
 import roomsroute from './routes/rooms.js';
 import usersroute from './routes/users.js';
+import seedsroute from './routes/seeds.js';
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use('/auth', authroute);
 app.use('/users', usersroute);
 app.use('/hotels', hotelsroute);
 app.use('/rooms', roomsroute);
+app.use('/seedAll', seedsroute);
 
 app.use((err, req, res, next) => {
     const errStatus = err.status || 500;
