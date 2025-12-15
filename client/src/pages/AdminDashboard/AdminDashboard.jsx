@@ -190,7 +190,9 @@ export default function AdminDashboard() {
         if (['createhotel'].includes(operation)){
 
             try {
-                const response = await axios.post(`${baseUrl}/hotels`, formDataHotel);
+                const response = await axios.post(`${baseUrl}/hotels`, formDataHotel,{
+                    withCredentials: true
+                  });
                 console.log('Hotel created:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Creation Success','success')
@@ -205,7 +207,9 @@ export default function AdminDashboard() {
         else if (['updatehotel'].includes(operation)){
             
             try {
-                const response = await axios.put(`${baseUrl}/hotels/${selectedHotelForUpdate._id}`, formDataHotel);
+                const response = await axios.put(`${baseUrl}/hotels/${selectedHotelForUpdate._id}`, formDataHotel,{
+                    withCredentials: true
+                  });
                 console.log('Hotel updated:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Updated Success','success')
@@ -219,7 +223,9 @@ export default function AdminDashboard() {
         }
         else if (['deletehotel'].includes(operation)){
             try {
-                const response = await axios.delete(`${baseUrl}/hotels/${selectedHotelForDelete._id}`)
+                const response = await axios.delete(`${baseUrl}/hotels/${selectedHotelForDelete._id}`,{
+                    withCredentials: true
+                  })
                 console.log('Hotel updated:', response.data);
                 if (response.status == '200'){
                     notification('Hotel','Hotel Delete Success','success')
