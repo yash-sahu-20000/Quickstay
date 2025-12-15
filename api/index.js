@@ -23,8 +23,7 @@ const connectdb = async () => {
     }
 }
 
-
-
+app.set("trust proxy", 1);//for RENDER deployment
 
 app.use(cors({
     origin: 'https://quickstay-1-zspj.onrender.com',
