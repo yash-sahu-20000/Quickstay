@@ -4,6 +4,8 @@ import createError from "./error.js";
 export const verifyToken = (req, res, next) => {
     console.log('entered verify token')
     const cookie = req.headers.cookie
+    console.log("cookie : "+cookie)
+
     if (!cookie){
         return next(createError(404, 'Not Authorized'))
     }
