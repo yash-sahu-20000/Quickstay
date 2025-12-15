@@ -58,7 +58,7 @@ export const seedAll = async (req, res, next) => {
       roomPayload.push({
         title: `Room Type ${i + 1}`,
         price: 1000 + (i % 10) * 150,
-        maxPeople: 1 + (i % 4),
+        maxPerson: 1 + (i % 4),
         description: `Sample room description ${i + 1}.`,
         roomNumbers: [
           { number: 100 + i * 2, unavailableDates: [] },
