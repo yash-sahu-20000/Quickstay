@@ -69,10 +69,10 @@ export const seedAll = async (req, res, next) => {
     }
 
     const rooms = await Room.insertMany(roomPayload);
-    console.log(rooms[0].toString());
+    console.log(roomPayload[0].toString());
     // Update hotels with rooms
     const roomsByHotel = {};
-    rooms.forEach(r => {
+    roomPayload.forEach(r => {
       const hId = r.hotel.toString();
       if (!roomsByHotel[hId]) roomsByHotel[hId] = [];
       roomsByHotel[hId].push(r._id);
@@ -96,7 +96,7 @@ export const seedAll = async (req, res, next) => {
       // create ~2 bookings per user
       const bookings = [];
       for (let b = 0; b < 2; b++) {
-        const room = rooms[(i * 2 + b) % rooms.length];
+        const room = roomPayload[(i * 2 + b) % roomPayload.length];
         const hotelId = room.hotel;
         const start = new Date();
         start.setDate(start.getDate() + (i + b));
