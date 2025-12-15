@@ -10,11 +10,11 @@ import { notification } from '../../utils/notification'
 import useFetch from '../../hooks/useFetch.jsx'
 import { convertUTCtoIST, getDatesBetween, normalizeDate } from '../../utils/functions.js'
 import Select from 'react-select'
+import { baseUrl } from '../../config.js'
 
 
 export default function AdminDashboard() {
   
-    const baseUrl = "https://quickstay-f66g.onrender.com";
     const user = useSelector(state => state.auth.user)
     const [isAdmin, setIsAdmin] = useState(false)
     const [selectedHotelImage, setSelectedHotelImage] = useState([]);

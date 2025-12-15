@@ -9,6 +9,7 @@ import axios from 'axios';
 import { loginFailure, loginStart, loginSuccess } from '../../redux/authReducer/authReducer';
 import { MdEmail } from 'react-icons/md';
 import { notification } from '../../utils/notification';
+import { baseUrl } from '../../config';
 
 function Login(props) {
 
@@ -23,7 +24,6 @@ function Login(props) {
 
   const [adminLogin, setAdminLogin] = useState(false)
 
-  const baseUrl = "https://quickstay-f66g.onrender.com";
 
 
   const handleLoginButton = async () => {

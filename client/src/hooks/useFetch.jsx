@@ -1,12 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { baseUrl } from "../config"
 
 const useFetch = (url) => {
     
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(null)
     const [error, setError] = useState(null)
-  const baseUrl = "https://quickstay-f66g.onrender.com";
 
     useEffect(()=>{
         const fetchData = async (url) => {
