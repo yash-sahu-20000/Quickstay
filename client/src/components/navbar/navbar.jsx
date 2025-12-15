@@ -35,7 +35,10 @@ function Navbar(props) {
   useEffect(()=>{
     const fetchAdminStatus = async () => {
         try {
-            const res = await axios.get(`/auth/isAdmin`);
+            const res = await axios.get(`/auth/isAdmin`,
+      {
+        withCredentials: true
+      });
             if (res.status === 200) {
                 setIsAdmin(true);
             }
