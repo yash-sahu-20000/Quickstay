@@ -6,12 +6,15 @@ export const verifyToken = (req, res, next) => {
     // const cookie = req.headers.cookie
     // console.log("cookie : "+cookie)
 
-    if (!cookie){
-        return next(createError(404, 'Not Authorized'))
-    }
+
     
     const token = req.cookies.access_token;
-    console.log("token : "+token);
+    if (!token){
+        return next(createError(404, 'Not Authorized'))
+    }
+        console.log("token1 : "+req.cookies);
+        console.log("token2: "+req.headers.cookie);
+    console.log("token3 : "+token);
     jwt.verify(token, process.env.JWTKEY, (err, userObtained)=>{
         if (err){
             return next(createError(400, 'Invalid Token'))
