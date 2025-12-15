@@ -10,6 +10,7 @@ import axios from 'axios'
 import { Store } from 'react-notifications-component';
 import { notification } from '../../utils/notification'
 import { getDatesBetween } from '../../utils/functions'
+import { baseUrl } from '../../config'
 
 
 

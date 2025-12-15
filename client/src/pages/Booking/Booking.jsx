@@ -7,6 +7,7 @@ import { notification } from '../../utils/notification';
 import axios from 'axios';
 import { bookingCancelled } from '../../redux/authReducer/authReducer';
 import { convertUTCtoIST, getDatesBetween, normalizeDate } from '../../utils/functions';
+import { baseUrl } from '../../config';
 
 
 export default function Booking() {
