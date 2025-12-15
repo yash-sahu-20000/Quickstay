@@ -28,36 +28,33 @@
         gap: 20px;
         flex-direction: column;
 
-        .profileDetailsItem {
+        .profileDetailsItem{
             display: flex;
-            gap: 20px;
-            align-items: center;
-
-            .profileDetailsItemLabel {
+            /* gap: 20px;
+            align-items: center; */
+            .profileDetailsItemLabel{
                 font-size: 20px;
-                flex-shrink: 0; 
             }
-
-            .profileDetailsItemField {
+            .profileDetailsItemField{
                 display: flex;
                 align-items: center;
-
-                .profileDetailsItemFieldInput {
+                .profileDetailsItemFieldInput{
+                    display: flex;
+                    align-items: center;
                     outline: none;
                     width: 300px;
                     font-size: 20px;
                     background-color: transparent;
                 }
             }
-
-            .profileDetailsItemDesc {
+            .profileDetailsItemDesc{
                 color: rgb(203, 202, 202);
+
                 @media (max-width: 768px) {
                     display: none;
                 }
             }
         }
-
     }
     .profileUpdateButton{
         background-color: #006ce4;
