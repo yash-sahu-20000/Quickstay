@@ -24,7 +24,11 @@ export default function AdminDashboard() {
     useEffect(()=>{
         const fetchAdminStatus = async () => {
             try {
-                const res = await axios.get(`${baseUrl}/auth/isAdmin`);
+                const res = await axios.get(`${baseUrl}/auth/isAdmin`
+                  ,{
+        withCredentials: true
+      }
+                );
                 if (res.status === 200) {
                     setIsAdmin(true);
                 }
