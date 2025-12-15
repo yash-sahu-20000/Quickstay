@@ -11,18 +11,19 @@ export const verifyToken = (req, res, next) => {
   const token = req.cookies.access_token;
 
   if (!token) {
-    return next(createError(402, "Not Authorized"));
+    return next(createError(401, "Token not found"));
   }
 
   jwt.verify(token, process.env.JWTKEY, (err, user) => {
     if (err) {
-      return next(createError(403, "Invalid Token"));
+      return next(createError(403, "Invalid or expired token"));
     }
 
     req.user = user;
     next();
   });
 };
+
 
 
 
