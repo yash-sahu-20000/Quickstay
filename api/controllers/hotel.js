@@ -90,14 +90,20 @@ export const getCountType = async (req, res, next)=>{
 
 
 export const postall = async (req, res, next) => {
-    try {
-        console.log(req.body)
-        const x = await Hotel.insertMany(req.body)
-        res.status(200)
-    } catch (error) {
-        return next(createError(500, 'unable to post hotels'))
-    }
+  try {
+
+    const hotels = await Hotel.insertMany(req.body)
+
+    return res.status(200).json({
+      success: true,
+      count: hotels.length,
+      data: hotels
+    })
+  } catch (error) {
+    return next(createError(500, 'unable to post hotels'))
+  }
 }
+
 
 export const getAllCityNames = async (req, res, next) => {
     try {
