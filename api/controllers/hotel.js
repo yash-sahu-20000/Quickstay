@@ -91,6 +91,7 @@ export const getCountType = async (req, res, next)=>{
 
 export const postall = async (req, res, next) => {
     try {
+        console.log(req.body)
         const x = await Hotel.insertMany(req.body)
         res.status(200)
     } catch (error) {
